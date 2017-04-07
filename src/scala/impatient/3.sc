@@ -9,7 +9,7 @@ nums.foreach(System.out.print)
 // ex.3.2
 def swapAdj(arr: Array[Int]) = {
   var temp = 0
-  for (i <- 0 until (arr.length - 1, 2)) {
+  for (i <- 0 until arr.length - 1 by 2) {
     temp = arr(i)
     arr(i) = arr(i+1)
     arr(i+1) = temp
@@ -21,9 +21,9 @@ println(swapAdj(Array(1,2,3,4,5)).toList)
 // ex.3.3
 def swapAdjYeild(arr: Array[Int]) = {
   for (i <- arr.indices) yield
-  if (i == arr.length - 1 && i % 2 == 0) arr(i)
-  else if (i % 2 == 0) arr(i + 1)
-  else arr(i - 1)
+    if (i == arr.length - 1 && i % 2 == 0) arr(i)
+    else if (i % 2 == 0) arr(i + 1)
+    else arr(i - 1)
 }
 val b = Array(1,2,3,4,5)
 println(swapAdjYeild(b))
